@@ -18,7 +18,7 @@
         <a href="/create">Create a New Post</a>
     </div>
 
-    <!-- code that loads every post which is saved in an array called "posts"-->
+    <!-- code that loads every post which is saved in an array called "posts", also has an else in case there are no posts -->
     <div class="container-sm">
     <% if (posts.length > 0) { %>
         <% posts.forEach(function(post) { %>
@@ -45,4 +45,5 @@
     </div>
 
 </body>
+
 </html>
