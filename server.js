@@ -4,10 +4,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const { render } = require('express/lib/response')
 
-// view engine
+// the view engine I will use
 app.set('view engine', 'ejs')
 
-// for parsing form data
+// for parsing form data, makes it eesier
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // array to store posts
@@ -38,19 +38,21 @@ app.get('/', (req, res) => {
 
 // post deleting 
 app.post('/delete-post', (req, res) => {
-    
-    const postTitle = req.body.postTitle;
 
-    
+    // finds array index from title
+    const postTitle = req.body.postTitle;
     const postIndex = posts.findIndex(post => post.title === postTitle);
 
+    // uses splice to remove the post so the array doesn't get all messed up
     if (postIndex !== -1) {
         posts.splice(postIndex, 1);
     }
 
+    // redirects to index.ejs
     res.redirect('/');
 });
 
 
 
 app.listen(3000)
+
