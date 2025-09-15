@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <!-- header -->
+    <!-- header which just says Create a new blog post -->
     <div class="container-sm">
         <h1>Create a New Blog Post</h1>
     </div>
 
-    <!-- form for user to inputs vallues and stores them in posts array -->
+    <!-- form for user to input vallues and stores them in posts array -->
     <div class="container-sm">
     <form action="/create" method="POST">
         <div>
@@ -29,14 +29,17 @@
             <label for="content">Content:</label>
             <textarea id="content" name="content" rows="10" required></textarea>
         </div>
+
+        <!-- submit button for form -->
         <button type="submit" class="btn btn-light border-primary text-primary bg-gradient">Publish Post</button>
     </form>
     </div>
 
-    <!-- link to home page -->
+    <!-- link to home page in case user changes their mind about posting -->
     <div class="container-sm">
     <a href="/" class="link-info link-offset-2 link-underline-opacity-75 link-underline-opacity-100-hover">Back to Home</a>
     </div>
 
 </body>
+
 </html>
