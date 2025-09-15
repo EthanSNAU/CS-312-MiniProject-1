@@ -13,10 +13,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // array to store posts
 const posts = [];
 
+// goes to createPost.ejs
 app.get('/create', (req, res) => {
   res.render('createPost')
 })
 
+// sends form data to creatPost.ejs
 app.post('/create', (req, res) => {
     const { title, author, content } = req.body;
     const newPost = {
@@ -29,6 +31,7 @@ app.post('/create', (req, res) => {
     res.redirect('/')
 })
 
+// sends user to index.ejs
 app.get('/', (req, res) => {
     res.render('index', { posts: posts })
 })
@@ -47,6 +50,7 @@ app.post('/delete-post', (req, res) => {
 
     res.redirect('/');
 });
+
 
 
 app.listen(3000)
