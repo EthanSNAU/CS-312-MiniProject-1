@@ -18,7 +18,7 @@ app.get('/create', (req, res) => {
   res.render('createPost')
 })
 
-// sends form data to creatPost.ejs
+// handles form data from creatPost.ejs
 app.post('/create', (req, res) => {
     const { title, author, content } = req.body;
     const newPost = {
@@ -55,4 +55,5 @@ app.post('/delete-post', (req, res) => {
 
 
 app.listen(3000)
+
 
