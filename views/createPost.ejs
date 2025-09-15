@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- header -->
+    <div class="container-sm">
+        <h1>Create a New Blog Post</h1>
+    </div>
+
+    <!-- form for user to inputs vallues and stores them in posts array -->
+    <div class="container-sm">
+    <form action="/create" method="POST">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="10" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-light border-primary text-primary bg-gradient">Publish Post</button>
+    </form>
+    </div>
+
+    <!-- link to home page -->
+    <div class="container-sm">
+    <a href="/" class="link-info link-offset-2 link-underline-opacity-75 link-underline-opacity-100-hover">Back to Home</a>
+    </div>
+
+</body>
+</html>

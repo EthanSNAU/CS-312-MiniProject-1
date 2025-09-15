@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Title of blog, which is just "blog" -->
+    <div class="container-sm">
+        <h1>Blog</h1>
+    </div>
+
+    <!-- links to page where you can create a new post -->
+    <div class="container-sm">
+        <a href="/create">Create a New Post</a>
+    </div>
+
+    <!-- code that loads every post which is saved in an array called "posts"-->
+    <div class="container-sm">
+    <% if (posts.length > 0) { %>
+        <% posts.forEach(function(post) { %>
+            <article>
+                <header>
+                    <h3><%= post.title %></h3>
+                    <p>By <%= post.author %> on <%= post.date %></p>
+                </header>
+                <section class="post-content">
+                    <p><%= post.content %></p>
+                </section>
+
+                <!-- for deletion-->
+                <form action="/delete-post" method="POST">
+                    <input type="hidden" name="postTitle" value="<%= post.title %>">
+                    <button type="submit" class="btn btn-light border-primary text-primary bg-gradient">Delete</button>
+                </form>
+            </article>
+            <hr>
+        <% }); %>
+    <% } else { %>
+        <p>No posts yet!</p>
+    <% } %>
+    </div>
+
+</body>
+</html>
